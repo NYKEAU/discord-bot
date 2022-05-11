@@ -1,11 +1,11 @@
-import Discord from 'discord.js';
+import discord from 'discord.js';
 import path from 'path';
 import dotenv from 'dotenv/config';
-import {getLastNews, youtubeCommand, twitchCommand, tiktokCommand} from './index.js';
+import {getLastNews, reactionRole, youtubeCommand, twitchCommand, tiktokCommand} from './index.js';
 
-const client = new Discord.Client({intents: [
-    Discord.Intents.FLAGS.GUILDS,
-    Discord.Intents.FLAGS.GUILD_MESSAGES
+const client = new discord.Client({intents: [
+    discord.Intents.FLAGS.GUILDS,
+    discord.Intents.FLAGS.GUILD_MESSAGES
 ]});
 
 client.on("ready", () => {
@@ -14,6 +14,7 @@ client.on("ready", () => {
     youtubeCommand();
     twitchCommand();
     tiktokCommand();
+    reactionRole();
     console.log("Fin");
 })
 
