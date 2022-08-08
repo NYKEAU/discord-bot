@@ -18,7 +18,7 @@ function reactionRole () {
         if(message.content === "!role") {
             const Role = await message.guild.roles.fetch(config["reaction-role"]);
 
-            if (!Role) return message.channel.send(`Impossible de trouber un rôle avec l'ID \`${config["reaction-role"]}\`. Veuillez vérifier si \`config.json (reaction-role)\` contient un ID valide.`);
+            if (!Role) return message.channel.send(`Impossible de trouver un rôle avec l'ID \`${config["reaction-role"]}\`. Veuillez vérifier si \`config.json (reaction-role)\` contient un ID valide.`);
 
             const Filter = (reaction, user) => user.id == message.author.id;
 
